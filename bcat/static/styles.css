@@ -1,0 +1,72 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #343a40;
+    color: white;
+}
+
+.text-success {
+    color: green;
+}
+
+.text-danger {
+    color: red;
+}
+/* Card styling */
+.flat-card {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: none; /* Remove shadow for flat design */
+    /* padding: 20px; */
+    background-color: #f8f9fa; /* Light background color for the flat design */
+}
+
+/* Ensure the card-body is displayed in a row with space between image and details */
+.card-body {
+    /* display: flex; */
+    align-items: center;
+}
+
+/* Employee Image styling */
+.card-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Add some margin between the image and the details */
+.card-details {
+    flex-grow: 1; /* Allows the details section to take up the rest of the space */
+    margin-left: 20px;
+}
+
+/* Styling for the unordered list (details section) */
+.card-details ul {
+    padding: 0;
+    list-style: none; /* Remove bullet points */
+}
+
+.card-details li {
+    margin-bottom: 8px; /* Add space between each detail */
+}
+
+/* Chat button alignment */
+.text-left {
+    margin-top: 15px;
+}
+
+/* Optionally adjust card-title for better alignment */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}

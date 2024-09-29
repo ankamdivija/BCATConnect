@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggested Meeting Times</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background: white;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .navbar a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar a.logo {
+            display: block;
+            color: #f2f2f2;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 30px;
+            padding: 14px 16px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            padding: 2em;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: 60px repeat(7, 1fr); /* First column for time, then 7 columns for days */
+            grid-auto-rows: minmax(50px, auto); /* Allow rows to expand if content is long */
+            gap: 1px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        .time-label, .day {
+            border: 1px solid black;
+            padding: 10px;
+            word-wrap: break-word;
+        }
+
+        .time-label {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        .time-slot {
+            font-size: 12px;
+            color: #333;
+            padding: 5px;
+            background-color: transparent;
+            word-wrap: break-word;
+        }
+
+        .day h3 {
+            margin: 0;
+            padding: 5px;
+            background-color: #f4f4f4;
+            border-bottom: 1px solid black;
+        }
+
+        .multi-slot {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/" class="logo">BCAT Connect</a>
+        <div class="nav-links">
+            <a href="/employees" class="tablinks">Employee Assistant</a>
+            <a href="/projects" class="tablinks">Programs</a>
+            <a href="/find_free_time" class="tablinks">Catchups</a>
+            <a href="/knowmore" class="tablinks">Events</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Suggested Meeting Times</h1>
+        <div class="calendar">
+            <!-- First row: Day labels -->
+            <div class="time-label"></div> <!-- Empty top-left corner -->
+            {% for day in week_days %}
+                <div class="day"><h3>{{ day.strftime('%A, %d %B') }}</h3></div>
+            {% endfor %}
+            
+            <!-- Time blocks for each hour from 9 AM to 5 PM -->
+            {% for hour in range(9, 18) %}
+                <div class="time-label">{{ hour % 12 if hour != 12 else 12 }} {{ "AM" if hour < 12 else "PM" }}</div>
+                {% for day in week_days %}
+                    <div class="day">
+                        {% if week_slots[day] %}
+                            <!-- Check if there are multiple slots in the same hour -->
+                            <div class="multi-slot">
+                                {% for slot in week_slots[day] %}
+                                    {% if slot[0].hour <= hour < slot[1].hour %}
+                                        <div class="time-slot">
+                                            {{ slot[0].strftime('%I:%M %p') }} - {{ slot[1].strftime('%I:%M %p') }}<br>
+                                            Available: {{ ', '.join(slot[2]) }}<br>
+                                            <button class="btn btn-primary" onclick="requestSlot('{{ slot[0] }}', '{{ slot[1] }}', '{{ ', '.join(slot[2]) }}')">Request</button>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <a href="/">Back</a>
+    </div>
+
+    <script>
+        function requestSlot(startTime, endTime, users) {
+            alert(`Requesting slot from ${startTime} to ${endTime} with: ${users}`);
+            // You can add more logic here to send a request to the server
+        }
+    </script>
+</body>
+</html>

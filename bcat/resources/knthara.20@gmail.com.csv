@@ -1,0 +1,4 @@
+﻿dtstart,dtend,dtstamp,organizer,uid,attendee,created,description,last-modified,location,sequence,status,summary,transp
+"2024-09-29T11:00:00Z","2024-09-29T12:00:00Z","2024-09-29T02:51:23Z","","2ee8lgd1do4s54rli22i235vbn@google.com","","2024-09-29T02:50:58Z","","2024-09-29T02:50:58Z","","0","CONFIRMED","dev task","OPAQUE"
+"2024-10-01T06:30:00Z","2024-10-01T07:30:00Z","2024-09-29T02:51:23Z","","3mgbvbdohk4ftmb5rlhp9lpmis@google.com","","2024-09-29T02:51:06Z","","2024-09-29T02:51:06Z","","0","CONFIRMED","design review","OPAQUE"
+"2024-10-03T10:00:00Z","2024-10-03T11:00:00Z","2024-09-29T02:51:23Z","","1u5tegp06odcoq9becfc3n9h58@google.com","","2024-09-29T02:51:13Z","","2024-09-29T02:51:13Z","","0","CONFIRMED","integration","OPAQUE"

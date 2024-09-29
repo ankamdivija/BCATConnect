@@ -1,0 +1,5 @@
+﻿dtstart,dtend,dtstamp,organizer,uid,attendee,created,description,last-modified,location,sequence,status,summary,transp
+"2024-09-29T13:00:00Z","2024-09-29T14:00:00Z","2024-09-29T03:55:23Z","","336mqg78copipmtjp8ah7roa39@google.com","","2024-09-29T03:54:52Z","","2024-09-29T03:54:52Z","","0","CONFIRMED","slack","OPAQUE"
+"2024-10-01T07:00:00Z","2024-10-01T08:00:00Z","2024-09-29T03:55:23Z","","5d1ijj816gh5gkt1iunkfj9if3@google.com","","2024-09-29T03:54:57Z","","2024-09-29T03:54:57Z","","0","CONFIRMED","tasks","OPAQUE"
+"2024-10-03T12:00:00Z","2024-10-03T13:00:00Z","2024-09-29T03:55:23Z","","25qfglfl0fgvhvbmee5csgtrcb@google.com","","2024-09-29T03:55:03Z","","2024-09-29T03:55:03Z","","0","CONFIRMED","daily routine","OPAQUE"
+"2024-10-02T13:30:00Z","2024-10-02T14:30:00Z","2024-09-29T03:55:23Z","","79717q78id3b1dld2e8ata7rod@google.com","","2024-09-29T03:55:12Z","","2024-09-29T03:55:12Z","","0","CONFIRMED","flasks","OPAQUE"
